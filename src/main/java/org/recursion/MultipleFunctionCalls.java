@@ -5,9 +5,24 @@ public class MultipleFunctionCalls {
         //System.out.println(fibonacci(6));
         /*stairsJumps(3, "");
         System.out.println(stairsJumps(3));*/
-        System.out.println(stairsJumpInfo(3));
+        //System.out.println(stairsJumpInfo(3));
+        System.out.println(binarySearch(new int[]{1,2,3,4,5,6,7}, 0, 6, 6));
+        System.out.println(binarySearch(new int[]{1,2,3,4,5,6,7}, 0, 6, 9.));
     }
 
+    public static int binarySearch(int[] arr, int l, int r, int num) {
+        if(l > r)
+            return -1;
+
+        int m = (l + r) / 2;
+        if(arr[m] == num)
+            return m;
+
+        if(arr[m] > num)
+            return binarySearch(arr, l, m - 1, num);
+        else
+            return binarySearch(arr, m + 1, r, num);
+    }
 
 
     public static int stairsJumps(int num) {
