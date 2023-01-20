@@ -9,7 +9,18 @@ public class SingleFunctionCall {
         //printDecreasingIncreasing(5);
         /*System.out.println(sum(5));
         System.out.println(sumInfo(5));*/
-        System.out.println(prod(5));
+        //System.out.println(prod(5));
+        printNumWords(512541151, new String[]{"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"});
+    }
+
+    public static void printNumWords(int num, String[] words) {
+        if(num == 0)
+            return;
+
+        int digit = num % 10;
+        num /= 10;
+        printNumWords(num, words);
+        System.out.print(words[digit] + " ");
     }
 
     public static int prod(int n) {
